@@ -3,68 +3,72 @@ package edu.neu.mgen;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 /**
- * Hello world!
+ * 
+ * Write and run the program that performs as follows:
+ * 
+ * As the program starts, its prompts in the terminal “Enter any word:”
+ * You enter a word and then press the “Enter” key.
+ * The program calculates the length of the entered word (suppose it is Y) and
+ * the time passed between the prompt output in item (a) and you pressed “Enter”
+ * key in item (b) (suppose the time lapsed is Z seconds)
+ * If you press “Enter” key without typing a word, the system types the output
+ * “You did not enter any word” and stops. If you entered a not empty word, then
+ * the length of the word is less or equal 5, the word is classified as “short”,
+ * if the length of the word is between 5 and 10, the word is classified as
+ * “medium”, otherwise the word is classified and “long”.
+ * If you entered word is not empty, the program output consists of four lines
+ * as follows:
+ * Your word is XXX
+ * It is a short/medium/long word
+ * The length of the word is Y
+ * Your reaction time is Z seconds
  *
  */
+
+enum LengthType {
+    SHORT,
+    MEDIUM,
+    LONG
+}
+
 public class App {
 
-    /*
-     * declare and initialize variables of types "int", "long", "double", "boolean",
-     * and "char" - two variables for each type.
-     * convert initialized variables of type "int" to "long"
-     * convert initialized variables of type "long" to "int"
-     * enter values for variables from the terminal.
-     * write the code and run the program for various arithmetic and logical
-     * operation with the variables.
-     */
-
     public static void main(String[] args) {
-        hw5();
+        printStr("Enter any word:");
 
-    }
+        Scanner scanner = new Scanner(System.in);
 
-    /**
-     * 1) Given String str = “Oakland”; Write a code to
-     * find the length of the string
-     * find a character with index 2 in the string.
-     * extract a substring “land” from str
-     * convert all letters in str to capital letters “OAKLAND”.
-     * 2) Given int[] abc = {1,3,5,2,5}; Write a code to
-     * find the length of the array
-     * find the last member of the array.
-     * 3) Create an ArrayList that consists of the following strings: “Austin”,
-     * “Houston”, “Oakland”, “Paris”, “San Francisco”, “Seattle”. Remove “Paris’
-     * from the ArrayList.
-     */
+        long startTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
+        String userInput = scanner.nextLine();
+        long endTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
+        scanner.close();
 
-    public static void hw5() {
-        // Q1:
-        String str = "Oakland";
-        printStr("str length is " + str.length());
-        printStr("char at 2 " + str.charAt(2));
-        printStr("substring from index 3 is " + str.substring(3));
-        printStr("to uppercase " + str.toUpperCase());
+        long secondCost = endTime - startTime;
 
-        // Q2:
-        int[] abc = { 1, 3, 5, 2, 5 };
-        printStr("abc's lenght is " + abc.length);
-        printStr("abc's last element is " + abc[abc.length - 1]);
+        int len = userInput.length();
+        LengthType inputLength;
 
-        // Q3:“”, “Oakland”, “Paris”, “San Francisco”, “Seattle”. Remove “Paris’
-        ArrayList<String> cities = new ArrayList<String>();
-        cities.add("Austin");
-        cities.add("Houston");
-        cities.add("Oakland");
-        cities.add("Paris");
-        cities.add("San Francisco");
-        cities.add("Seattle");
+        if (len == 0) {
+            printStr("You did not enter any word");
+            return;
+        }
 
-        System.out.println(cities);
-        printStr("Remove Paris:");
-        cities.remove(3);
-        System.out.println(cities);
+        if (len <= 5) {
+            inputLength = LengthType.SHORT;
+        } else if (len <= 10) {
+            inputLength = LengthType.MEDIUM;
+        } else {
+            inputLength = LengthType.LONG;
+        }
+
+        printStr("Your word is " + userInput);
+        printStr("It is a " + inputLength.name().toLowerCase() + " word");
+        printStr("The length of the word is " + len);
+        printStr("Your reaction time is " + secondCost + " seconds");
 
     }
 
