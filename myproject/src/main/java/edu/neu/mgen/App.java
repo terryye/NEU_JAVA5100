@@ -2,73 +2,71 @@
 package edu.neu.mgen;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 
 /**
+ * Program
+ * You have two matrices A[][] = {{2,3,4},{3,4,5}} and B[][] =
+ * {{1,2},{3,4},{5,6}}
+ * First check if the matrices can be multiplied A*B.
+ * If yes, then use loops to calculate the product of these two matrices A*B
+ * Output the result.
+ * Comments:
  * 
- * Write and run the program that performs as follows:
- * 
- * As the program starts, its prompts in the terminal “Enter any word:”
- * You enter a word and then press the “Enter” key.
- * The program calculates the length of the entered word (suppose it is Y) and
- * the time passed between the prompt output in item (a) and you pressed “Enter”
- * key in item (b) (suppose the time lapsed is Z seconds)
- * If you press “Enter” key without typing a word, the system types the output
- * “You did not enter any word” and stops. If you entered a not empty word, then
- * the length of the word is less or equal 5, the word is classified as “short”,
- * if the length of the word is between 5 and 10, the word is classified as
- * “medium”, otherwise the word is classified and “long”.
- * If you entered word is not empty, the program output consists of four lines
- * as follows:
- * Your word is XXX
- * It is a short/medium/long word
- * The length of the word is Y
- * Your reaction time is Z seconds
- *
+ * Learn first how to multiply matrices
+ * Use loops to go through the matrices.
+ * Your algorithm should be able to handle matrices of any size.
  */
-
-enum LengthType {
-    SHORT,
-    MEDIUM,
-    LONG
-}
 
 public class App {
 
     public static void main(String[] args) {
-        printStr("Enter any word:");
+        int[][] A = { { 2, 3, 4 }, { 3, 4, 5 } };
+        int[][] B = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
 
-        Scanner scanner = new Scanner(System.in);
-        long startTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-        String userInput = scanner.nextLine();
-        long endTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-        scanner.close();
-
-        long secondCost = endTime - startTime;
-
-        int len = userInput.length();
-        LengthType inputLength;
-
-        if (len == 0) {
-            printStr("You did not enter any word");
+        if (!isValidMatrix(A)) {
+            printStr("A is invalid.");
             return;
         }
 
-        if (len <= 5) {
-            inputLength = LengthType.SHORT;
-        } else if (len <= 10) {
-            inputLength = LengthType.MEDIUM;
-        } else {
-            inputLength = LengthType.LONG;
+        if (!isValidMatrix(B)) {
+            printStr("B is invalid.");
+            return;
         }
 
-        printStr("Your word is " + userInput);
-        printStr("It is a " + inputLength.name().toLowerCase() + " word");
-        printStr("The length of the word is " + len);
-        printStr("Your reaction time is " + secondCost + " seconds");
+        if (A[0].length != B.length) {
+            printStr("A * B is invalid.");
+            return;
+        }
 
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>(A.length);
+        for (int rowA = 0; rowA < A.length; rowA++) {
+            result.add(new ArrayList<Integer>());
+            for (int columnB = 0; columnB < B[0].length; columnB++) {
+                int sum = 0;
+                ArrayList<Integer> row = result.get(rowA);
+                for (int columnA = 0; columnA < A[0].length; columnA++) {
+                    sum += A[rowA][columnA] * B[columnA][columnB];
+                }
+                row.add(sum);
+            }
+        }
+
+        System.out.println(result);
+
+    }
+
+    private static boolean isValidMatrix(int[][] arr) {
+        if (arr == null || arr.length == 0) {
+            return false;
+        }
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1].length != arr[i].length) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static void printStr(String str) {
