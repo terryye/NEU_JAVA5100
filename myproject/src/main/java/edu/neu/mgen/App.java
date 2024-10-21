@@ -41,7 +41,6 @@ public class App {
         printStr("Enter any word:");
 
         Scanner scanner = new Scanner(System.in);
-
         long startTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         String userInput = scanner.nextLine();
         long endTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
