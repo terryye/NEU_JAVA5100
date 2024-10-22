@@ -1,8 +1,6 @@
 
 package edu.neu.mgen;
 
-import java.util.ArrayList;
-
 /**
  * There is an array of Strings defined in the class: {“Anne”, “John”, “Alex”,
  * “Jessica”}. Create a method that returns a new array that consists of all
