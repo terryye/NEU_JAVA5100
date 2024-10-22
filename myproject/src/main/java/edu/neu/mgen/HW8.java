@@ -31,14 +31,20 @@ import java.util.ArrayList;
 public class HW8 {
 
     public static void main(String[] args) {
-        String[] original = { "Anne", "John", "Alex", "Jessica" };
-        String[] result = reverseStringsWithCapitalInArray(original);
 
-        for (String str : result) {
+        System.out.println("*** 1st array ***");
+        String[] original1 = { "Anne", "John", "Alex", "Jessica" };
+        String[] result1 = reverseStringsWithCapitalInArray(original1);
+        for (String str : result1) {
             System.out.println(str);
-
         }
 
+        System.out.println("*** 2nd array ***");
+        String[] original2 = { "Sun", "Mercury", "Venis", "Earth", "Mars", "Jupiter" };
+        String[] result2 = reverseStringsWithCapitalInArray(original2);
+        for (String str : result2) {
+            System.out.println(str);
+        }
     }
 
     private static String[] reverseStringsWithCapitalInArray(String[] strArray) {
