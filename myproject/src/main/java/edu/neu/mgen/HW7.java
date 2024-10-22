@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Your algorithm should be able to handle matrices of any size.
  */
 
-public class App {
+public class HW7 {
 
     public static void main(String[] args) {
         int[][] A = { { 2, 3, 4 }, { 3, 4, 5 } };
