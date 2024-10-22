@@ -67,7 +67,9 @@ public class HW8 {
         for (int i = 0; i < strLen; i++) {
             str[i] = original.charAt(strLen - i - 1);
             if (i == 0) {
-                Character.toUpperCase(str[i]);
+                str[i] = Character.toUpperCase(str[i]);
+            } else {
+                str[i] = Character.toLowerCase(str[i]);
             }
         }
         String result = String.valueOf(str);
