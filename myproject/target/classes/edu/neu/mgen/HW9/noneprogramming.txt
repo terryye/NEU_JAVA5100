@@ -1,0 +1,33 @@
+1) What is class constructor and why is it needed?
+it is a special method that is used to initialize objects, the constructor is called when an object of a class is created.
+We need it because when we create an object of a class , we might want to do some necessary work like setting initial values for object attributes 
+
+2) What is the meaning of the following access modifiers: “public”, “private”, “protected”, and “default”?
+they are access modifiers, they are used for setting the access level.
+"public" and "default" can be used for classes, attributes, methods and constructors.
+“protected” and “private” can be used for methods and attributes;
+
+for classes:
+“public”: The class is accessible by any other class
+"default": The class is only accessible by classes in the same package. This is used when we don't specify a modifier. 
+for attributes, methods, and constructors:
+"public" : the code is accessible for all classed
+"default" :The code is only accessible within the same package.  This access modifier is used when you don't specify a modifier.
+"protected" :The code is accessible in the same class and its subclasses.
+"private": The code is only accessible inside this class.
+
+3) What is the meaning of the following non-access modifiers: “final” and “abstract”?
+
+For classes:
+final: The class cannot be inherited by other classes.We can only create a final class if it is complete in nature, an abstract class won't be final.
+abstract: The abstract class is a class that can not be initiated by itself, it needs to be subclassed by another class to use its properties.
+
+For attributes and methods:
+final: Attributes and methods cannot be overridden/modified
+
+For methods:
+abstract: The method does not have a body. The body is provided by the subclass (inherited from). 
+
+4) What is a Java package?
+A package in Java is used to group related classes. Think of it as a folder in a file directory.
+We use packages to avoid name conflicts, and to write a better maintainable code.
