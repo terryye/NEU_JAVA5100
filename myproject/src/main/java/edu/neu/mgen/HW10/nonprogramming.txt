@@ -1,0 +1,22 @@
+1.	Can a class be derived (inherit) from two different independent classes?
+No, Java does not support multiple inheritance for classes. However, a class can implement multiple "interface"s, allowing similar functionality to be achieved without ambiguity.
+
+2.	Can a class be derived (inherit) from a “final” class?
+No, a class marked as final cannot be extended. The final modifier indicates that the class is in its complete and immutable state, so it cannot serve as a parent class.
+
+3.	What is polymorphism, how does it work, and why is it needed?
+Polymorphism allows methods with the same name to behave differently based on the type or number of parameters (method overloading) or based on the actual object being referred to at runtime (method overriding).
+It is needed because it enhances code flexibility and reusability by allowing a single interface to be used for different underlying forms (e.g., parent-child relationships). For example, a method called draw() can behave differently for objects of classes Circle and Rectangle.
+
+4.	What is an inner (nested) class?
+An inner (nested) class is a class defined within another class.  It is logically grouped with the outer class and is primarily used to encapsulate helper classes or classes that are tightly associated with the enclosing class. Inner classes can help improve code readability and organization by keeping related classes together.
+
+
+5.	What is an abstract class, and why is it needed?
+An abstract class is a blueprint for other classes. It cannot be instantiated but can be extended by other classes. Abstract classes can define abstract methods (without implementations) that must be implemented by subclasses, as well as concrete methods (with implementations). This helps in creating a common structure and enforcing certain behavior in derived classes.
+For example, you can have an abstract class Vehicle with derived classes like Car and Motorbike, which inherit common properties and methods but also implement their specific behaviors.
+
+
+6.	What is an “interface” in Java?
+An interface in Java defines a set of methods and properties that the implementing classes must provide. It serves as a contract or blueprint for behavior. An interface can contain:	Abstract methods ( public and abstract).
+and Static constants ( public, static, and final). Interfaces are used to achieve abstraction and multiple inheritance. They allow a class to define behavior independent of its class hierarchy, ensuring flexibility and code standardization.
