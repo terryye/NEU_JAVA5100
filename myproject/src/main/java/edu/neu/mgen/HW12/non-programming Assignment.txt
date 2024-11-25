@@ -1,0 +1,12 @@
+Non-programming Assignment
+1) How to read information from a file?
+1 Instantiate a File object to represent the file using the given path.
+2 Create a Scanner object and pass the File object as the input source.
+3 Read the file line by line (each line is separated by \n) and store the content in a designated variable type.
+4 Stop reading the file when reaching the end (\0), and close the file handler to prevent memory leaks.
+5 Use a try-catch block to handle potential exceptions, such as invalid file paths or missing files.
+
+2) How to write information to a file?
+1 Instantiate a FileWriter object with the given file path.
+2 Use the methods provided by FileWriter to write different types of data into the file.
+3 Once writing is complete, close the FileWriter object to release resources and ensure all data is saved properly.

@@ -1,0 +1,9 @@
+1) What does expression “try … catch” do?
+This expression is used for exception handling. It allows the program to handle run errors ( exceptions) gracefully without crashing. The program tries to excute the code inside try block, and if an exception occur, it is caught and handled with the code inside catcth block.
+
+2) What does it mean when the program throws exceptions?
+it means an error has occurred during excution, and the normal flow of the program is disrupted.
+exceptions are objects that represent these errors and are thrown by our code using throw keyword or by JVM.
+
+3) What is a Thread in Java?
+Thread is a lightweight process. it represent an excution unit. Threads are used to excute task concurrently, allowing multiple operations to run simultaneously.
