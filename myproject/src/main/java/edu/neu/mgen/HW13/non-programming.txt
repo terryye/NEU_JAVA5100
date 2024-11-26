@@ -1,0 +1,19 @@
+1) What is JDBC?
+JDBC stands for Java Database Connectivity. It is a Java API to connect and execute the query with database.
+It is a part of JavaSE, JDBC API uses JDBC drivers to connect with database.
+
+There are four types of JDBC driver:
+JDBC-ODBC Bridge driver
+Native driver
+Network Protocol Driver
+Thin driver
+
+2) How to connect your Java program to a database?
+We can use the JDBC API to access tabular data stored in a relational database. With JDBC, we can perform operations like saving, updating, deleting, and retrieving data from the database.
+
+JDBC functions similarly to Open Database Connectivity (ODBC) provided by Microsoft.
+When a Java application requires a database connection, you can use one of the DriverManager.getConnection() methods to establish a connection.
+The URL format for the connection depends on the specific database and JDBC driver. While the URL always starts with the jdbc: protocol, the remainder is determined by the database vendor.
+Example URL format for different databases:
+MySQL: jdbc:mysql://hostname:port/databaseName
+PostgreSQL: jdbc:postgresql://hostname:port/databaseName
