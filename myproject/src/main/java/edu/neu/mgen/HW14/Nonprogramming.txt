@@ -1,0 +1,25 @@
+1) How can we add GUI to a Java program?
+We can use GUI library such as Swing or JavaFX to create GUIs.
+For example, if we choose Swing:
+Import the necessary Swing packages, such as javax.swing.*.
+Create a JFrame (a window) as the main container.
+Add components like JButton, JLabel, and JTextField to the frame.
+
+2) What is AWT - Abstract Windowing Toolkit?
+The Abstract Window Toolkit (AWT) supports Graphical User Interface
+(GUI) programming. AWT features include:
+- A set of native user interface components
+- A robust event-handling model
+- Graphics and imaging tools, including shape, color, and font classes
+- Layout managers, for flexible window layouts that do not depend on a particular window size or screen resolution
+- Data transfer classes, for cut-and-paste through the native platform clipboard
+
+3) What is Swing?
+The Swing classes are built on top of the AWT architecture. It is a Graphical User Interface (GUI) toolkit that includes
+the GUI components.
+- Swing provides a rich set of widgets and packages to make sophisticated GUI components for Java applications.
+- Swing is a part of Java Foundation Classes(JFC), which is an API for Java GUI programing that provide GUI.
+- The Java Swing library is built on top of the Java Abstract Widget Toolkit (AWT), an older, platform dependent GUI toolkit.
+- We can use the Java simple GUI programming components like button, textbox, etc., from the library and do not have to create the components from scratch.
+
+

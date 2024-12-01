@@ -1,0 +1,41 @@
+1) What is SDLC and what are its steps?
+Software Development Life Cycle (SDLC): The SDLC is a structured process used for planning, creating, testing, deploying, and maintaining software applications. It ensures that high-quality software is developed systematically and meets user requirements effectively.
+Steps in SDLC are:
+- Planning
+- Analysis
+- Design
+- Implementation
+- Maintenance
+- Obsolescence
+
+
+2) List and describe different SDLC types.
+- Traditional Waterfall SDLC
+In the traditional waterfall model, next phase begins when another completes, with little or no backtracking and looping.
+Pros: Simple and easy to manage, good for projects with well-defined requirements.
+Cons: Inflexible, not suitable for changing requirements.
+
+- Rapid Application Development (RAD)
+RAD is a model focused on fast development and quick delivery by using iterative prototypes and minimal planning. It emphasizes user feedback and reusability of components.
+Pros: Quick delivery, flexible to changes, customer-focused.
+Cons: Requires skilled teams, unsuitable for complex projects.
+
+- Service-Oriented Architecture (SOA)
+Modular approach using reusable services that communicate via standard protocols (e.g., REST, SOAP).
+Pros: Scalable, reusable, easy integration.
+Cons: Complex implementation, potential performance issues.
+
+- Agile Methodologies
+Iterative and incremental approach where work is done in small cycles (sprints).Focuses on collaboration, adaptability, and continuous delivery.
+Pros: Flexible, fast delivery, close collaboration.
+Cons: Requires skilled teams, potential scope creep.
+
+- eXtreme Programming
+Agile approach emphasizing quality through frequent releases, pair programming, and test-driven development (TDD).
+Pros: High-quality code, frequent delivery, teamwork.
+Cons: Resource-intensive, not ideal for large teams.
+
+- Rational Unified Process (RUP)
+Iterative framework with four phases (Inception, Elaboration, Construction, Transition), combining Agile and traditional methods.
+Pros: Clear structure, scalable for large projects.
+Cons: Heavy documentation, complex process.
